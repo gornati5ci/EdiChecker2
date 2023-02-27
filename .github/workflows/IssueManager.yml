@@ -1,0 +1,13 @@
+on:
+  issues:
+    types: [labeled]
+jobs:
+  Move_Labeled_Issue_On_Project_Board:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.MY_TOKEN }}"
+        project-url: "https://github.com/users/gornati5ci/projects/2/views/1"
+        column-name: "Todo"
+        label-name: "bug"
