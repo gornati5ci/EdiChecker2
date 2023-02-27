@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Label issues
+
+# Controls when the workflow will run
+on:
+  issues:
+    types:
+      - reopened
+
+jobs:
+  label_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabel({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["Riaperto"]
+            })
