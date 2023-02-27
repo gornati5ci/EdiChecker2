@@ -10,4 +10,4 @@ jobs:
         action-token: "${{ secrets.MY_TOKEN }}"
         project-url: "https://github.com/users/gornati5ci/projects/2/views/1"
         column-name: "Todo"
-        label-name: "bug"
+        label-name: "Bug"
